@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import ProjectService from "../services/ProjectService";
 import { Project } from "../types/Project";
 
-function HomePage() {
+function ManageProjectPage() {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
@@ -49,4 +49,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default ManageProjectPage;

@@ -1,24 +1,36 @@
 import { Routes, Route } from "react-router";
-import HomePage from "./pages/HomePage.tsx";
 import AddProjectPage from "./pages/AddProjectPage.tsx";
 import EditProjectPage from "./pages/EditProjectPage.tsx";
+import { Header } from "./components/Header.tsx";
+import ManageProjectPage from "./pages/ManageProjectPage.tsx";
 
 function App() {
   return (
-    <div className="width-screen">
+    <div className="w-screen">
+      <Header />
+
       <Routes>
         <Route
           path="/"
-          element={<HomePage />}
-        />
+          element={<BasePage />}
+          />
         <Route
-          path="/add"
+          path="/add-project"
           element={<AddProjectPage />}
-        />
+          />
+                  <Route
+          path="/add-story"
+          element={<AddStoryPage />}
+          />
         <Route
           path="/edit/:id"
           element={<EditProjectPage />}
+          />
+        <Route 
+        path="/manage"
+        element={<ManageProjectPage />}  
         />
+
       </Routes>
     </div>
   );
